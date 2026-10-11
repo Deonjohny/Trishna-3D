@@ -1,0 +1,122 @@
+.door-hint{position:absolute;z-index:2;right:18px;bottom:18px;padding:9px 12px;border:1px solid #a7b9ae;border-radius:4px;background:rgba(245,248,242,.9);color:#38584f;font:9px 'DM Mono',monospace;letter-spacing:.2px;pointer-events:none;box-shadow:0 2px 8px #33453b22}
+.viewer canvas{cursor:grab}.viewer canvas:active{cursor:grabbing}
+/* Construction Build-up Animation Timeline & Controls */
+.build-sequence-card {
+  position: absolute;
+  top: 68px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: rgba(246, 252, 248, 0.94);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid #bce1c5;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(45, 86, 63, 0.16);
+  pointer-events: auto;
+  max-width: 90vw;
+  width: 440px;
+  animation: buildCardPop 0.4s cubic-bezier(0.2, 0.8, 0.25, 1);
+}
+
+@keyframes buildCardPop {
+  from { opacity: 0; transform: translate(-50%, -12px) scale(0.96); }
+  to { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+
+.build-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.build-stage-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #27523a;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.build-stage-badge i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #398357;
+  box-shadow: 0 0 0 3px rgba(57, 131, 87, 0.25);
+  animation: buildDotPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes buildDotPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+.build-percent-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  font-weight: 800;
+  color: #2d563f;
+}
+
+.build-track-wrap {
+  width: 100%;
+  height: 8px;
+  background: #dbeef1;
+  border-radius: 99px;
+  overflow: hidden;
+  position: relative;
+}
+
+.build-track-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #3d865c, #63b381, #d9825b);
+  transition: width 0.15s ease-out;
+  box-shadow: 0 0 10px rgba(61, 134, 92, 0.5);
+}
+
+.build-stages-indicators {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 10px;
+  font-weight: 600;
+  color: #608670;
+  margin-top: 2px;
+}
+
+.build-stages-indicators span.active {
+  color: #204c34;
+  font-weight: 800;
+}
+
+.build-btn-rebuild {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 99px;
+  background: #e2f2e6;
+  border: 1px solid #bce1c5;
+  color: #27523a;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.build-btn-rebuild:hover {
+  background: #d1ebd6;
+  transform: translateY(-1px);
+}

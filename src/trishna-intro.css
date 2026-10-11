@@ -1,0 +1,483 @@
+/* =========================================================================
+   TRISHNA 3D - CUTE PASTEL GREEN INTRO & BRICK BUILDING TRANSITION
+   ========================================================================= */
+
+:root {
+  --trishna-pastel-bg: #edf6ef;
+  --trishna-pastel-card: #f7fbf8;
+  --trishna-pastel-mint: #d4ebd8;
+  --trishna-pastel-sage: #a3cfa9;
+  --trishna-pastel-deep: #2d563f;
+  --trishna-pastel-ink: #1f3d2c;
+  --trishna-brick-base: #df846c;
+  --trishna-brick-dark: #b8624d;
+  --trishna-brick-mortar: #f3dfd5;
+  --trishna-gold: #ebb15b;
+}
+
+/* Full-Screen or In-Hero Intro Overlay */
+.trishna-intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 30%, #f6fbf7 0%, #e5f3e8 55%, #d5e9db 100%);
+  color: var(--trishna-pastel-ink);
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  overflow: hidden;
+  transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1), transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trishna-intro-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.04);
+}
+
+/* Isometric Drafting Blueprint Grid Background */
+.trishna-grid-bg {
+  position: absolute;
+  inset: -100px;
+  background-size: 38px 38px;
+  background-image: 
+    linear-gradient(to right, rgba(90, 148, 110, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(90, 148, 110, 0.08) 1px, transparent 1px);
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+/* Floating Cute Pastel Architectural Foliage & Clouds */
+.trishna-floating-elements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.trishna-cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  border-radius: 40px;
+  box-shadow: 0 8px 24px rgba(60, 115, 80, 0.06);
+  animation: floatCloud 22s linear infinite;
+}
+
+.trishna-cloud.c1 { width: 140px; height: 42px; top: 12%; left: -160px; animation-duration: 28s; }
+.trishna-cloud.c2 { width: 190px; height: 50px; top: 22%; right: -210px; animation-duration: 34s; animation-direction: reverse; }
+.trishna-cloud.c3 { width: 110px; height: 36px; bottom: 18%; left: -120px; animation-duration: 25s; }
+
+@keyframes floatCloud {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(100vw + 320px)); }
+}
+
+/* Center Stage Container */
+.trishna-stage {
+  position: relative;
+  z-index: 10;
+  width: min(720px, 92vw);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  border: 2px solid rgba(175, 215, 185, 0.65);
+  border-radius: 28px;
+  padding: 42px 36px 34px;
+  box-shadow: 
+    0 24px 60px rgba(45, 86, 63, 0.12),
+    0 4px 18px rgba(45, 86, 63, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: stagePopIn 0.75s cubic-bezier(0.18, 0.89, 0.32, 1.25) both;
+}
+
+@keyframes stagePopIn {
+  from { opacity: 0; transform: translateY(28px) scale(0.94); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Top Cute Pill Badge */
+.trishna-cute-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 99px;
+  background: #def0e3;
+  border: 1px solid #bce1c5;
+  color: var(--trishna-pastel-deep);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.trishna-cute-pill i {
+  font-style: normal;
+  display: inline-block;
+  animation: cutePulse 1.8s ease-in-out infinite;
+}
+
+@keyframes cutePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.35) rotate(10deg); }
+}
+
+/* 3D Realistic Three.js Viewport */
+.trishna-3d-viewport {
+  position: relative;
+  width: 100%;
+  height: 290px;
+  max-width: 580px;
+  margin: 8px 0 16px;
+  border-radius: 20px;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.75), rgba(220, 240, 226, 0.45));
+  border: 1.5px solid rgba(188, 225, 197, 0.85);
+  box-shadow: inset 0 2px 10px rgba(45, 86, 63, 0.06), 0 12px 28px rgba(45, 86, 63, 0.08);
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+.trishna-3d-viewport:active {
+  cursor: grabbing;
+}
+
+.trishna-3d-viewport canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.trishna-3d-hint {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  padding: 4px 12px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(188, 225, 197, 0.9);
+  color: #3b6b4e;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(45, 86, 63, 0.1);
+}
+
+/* Central Animation Area: Name -> Brick -> Building */
+.trishna-canvas-box {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  height: 250px;
+  margin: 12px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 1. Name typography presentation */
+.trishna-title-anim {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trishna-title-anim h1 {
+  margin: 0;
+  font-family: 'Manrope', 'DM Sans', sans-serif;
+  font-size: clamp(48px, 8vw, 68px);
+  font-weight: 800;
+  letter-spacing: -2.5px;
+  color: var(--trishna-pastel-deep);
+  text-shadow: 0 2px 10px rgba(45, 86, 63, 0.15);
+  line-height: 1;
+}
+
+.trishna-title-anim .trishna-3d-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #df846c, #c86348);
+  padding: 4px 14px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(200, 99, 72, 0.35);
+  border: 2px solid #fff;
+  transform: rotate(-3deg);
+  animation: tagWiggle 2.5s ease-in-out infinite;
+}
+
+@keyframes tagWiggle {
+  0%, 100% { transform: rotate(-3deg) scale(1); }
+  50% { transform: rotate(2deg) scale(1.05); }
+}
+
+/* 2. Interactive Animated SVG Building and Bricks */
+.trishna-building-svg {
+  width: 100%;
+  height: 100%;
+  max-height: 250px;
+}
+
+/* Brick building animation elements */
+.brick-piece {
+  transition: opacity 0.35s, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: center bottom;
+}
+
+.brick-piece.hidden {
+  opacity: 0;
+  transform: translateY(-40px) scale(0.6);
+}
+
+.brick-piece.placed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Cute window glow */
+.window-pane {
+  animation: windowGlow 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes windowGlow {
+  from { fill: #fced98; filter: drop-shadow(0 0 2px #fae175); }
+  to { fill: #fff6cc; filter: drop-shadow(0 0 7px #ffd54f); }
+}
+
+/* Chimney gentle smoke puff */
+.smoke-puff {
+  animation: puffSmoke 2.6s ease-out infinite;
+  opacity: 0;
+  transform-origin: center;
+}
+
+.smoke-puff.s2 { animation-delay: 0.9s; }
+.smoke-puff.s3 { animation-delay: 1.8s; }
+
+@keyframes puffSmoke {
+  0% { opacity: 0; transform: translateY(0) scale(0.5); }
+  35% { opacity: 0.7; transform: translateY(-12px) scale(1); }
+  100% { opacity: 0; transform: translateY(-34px) scale(1.8) translateX(10px); }
+}
+
+/* Phase Progress Indicators */
+.trishna-phase-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 6px;
+  margin-bottom: 22px;
+}
+
+.trishna-phase-step {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #799d84;
+  transition: color 0.3s;
+}
+
+.trishna-phase-step.active {
+  color: var(--trishna-pastel-deep);
+}
+
+.trishna-phase-step .step-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #b2d6bb;
+  transition: all 0.3s;
+}
+
+.trishna-phase-step.active .step-dot {
+  background: var(--trishna-pastel-deep);
+  box-shadow: 0 0 0 3px rgba(45, 86, 63, 0.22);
+  transform: scale(1.2);
+}
+
+/* Narrative / Status Subtitle */
+.trishna-story-text {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #4b6f58;
+  max-width: 460px;
+  min-height: 44px;
+  margin: 0;
+}
+
+.trishna-story-text b {
+  color: var(--trishna-pastel-deep);
+}
+
+/* Actions at the bottom */
+.trishna-intro-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.trishna-btn-enter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2d563f, #3e7355);
+  color: #fff;
+  border: 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(45, 86, 63, 0.28);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.trishna-btn-enter:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(45, 86, 63, 0.35);
+  background: linear-gradient(135deg, #264a36, #36664b);
+}
+
+.trishna-btn-skip {
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: transparent;
+  color: #5c846b;
+  border: 1px solid #badcc3;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.trishna-btn-skip:hover {
+  background: #e3f2e7;
+  color: var(--trishna-pastel-deep);
+}
+
+/* Replay Pill Button in Header */
+.trishna-replay-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 99px;
+  background: #def0e3;
+  border: 1px solid #bce1c5;
+  color: #2d563f;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.4px;
+  transition: all 0.2s;
+}
+
+.trishna-replay-pill:hover {
+  background: #cce8d3;
+  transform: translateY(-1px);
+}
+
+/* Trishna Miniature Building Vignette (for Dashboard preview card) */
+.trishna-mini-vignette {
+  position: absolute;
+  z-index: 4;
+  right: 18px;
+  top: 96px;
+  width: 78px;
+  height: 98px;
+  pointer-events: none;
+}
+
+.trishna-mini-label {
+  position: absolute;
+  top: -22px;
+  right: -8px;
+  white-space: nowrap;
+  padding: 4px 8px;
+  border: 1px solid #c2e2cb;
+  border-radius: 99px;
+  background: #f4faf5;
+  color: #2d563f;
+  font: 700 8px 'DM Mono', monospace;
+  letter-spacing: 0.3px;
+  box-shadow: 0 3px 12px rgba(45, 86, 63, 0.15);
+}
+
+.mini-brick-grid {
+  position: absolute;
+  right: 4px;
+  bottom: 8px;
+  width: 70px;
+  height: 48px;
+}
+
+.mini-brick {
+  position: absolute;
+  width: 20px;
+  height: 9px;
+  border: 1px solid #a85d49;
+  border-radius: 2px;
+  background: linear-gradient(135deg, #ee9e79, #d87861);
+  box-shadow: 0 2px 2px rgba(90, 70, 59, 0.15);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mini-brick.b-0 { left: 2px; bottom: 0; }
+.mini-brick.b-1 { left: 24px; bottom: 0; }
+.mini-brick.b-2 { left: 46px; bottom: 0; }
+.mini-brick.b-3 { left: 13px; bottom: 10px; }
+.mini-brick.b-4 { left: 35px; bottom: 10px; }
+.mini-brick.b-5 { left: 2px; bottom: 20px; }
+.mini-brick.b-6 { left: 24px; bottom: 20px; }
+.mini-brick.b-7 { left: 46px; bottom: 20px; }
+.mini-brick.b-8 { left: 13px; bottom: 30px; }
+.mini-brick.b-9 { left: 35px; bottom: 30px; }
+.mini-brick.b-10 { left: 24px; bottom: 40px; }
+.mini-brick.b-11 { left: 46px; bottom: 40px; }
+
+.mini-brick.laid {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mini-house-svg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 74px;
+  height: 70px;
+  opacity: 0;
+  filter: drop-shadow(0 6px 4px rgba(32, 70, 55, 0.3));
+  transform: translateY(10px) scale(0.85);
+  transform-origin: bottom center;
+  transition: all 0.45s cubic-bezier(0.2, 0.8, 0.25, 1);
+}
+
+.mini-house-svg.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
