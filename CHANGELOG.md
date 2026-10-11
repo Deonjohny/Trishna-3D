@@ -4,6 +4,14 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-11T08:46:59+05:30 — Refined Pitch Presentation
+
+- Changed: Created a spacious 7-slide deck at `presentation-output/Trishna 3D - Pitch Deck.pptx` and copied it to `public/Trishna 3D Pitch Deck.pptx`; updated the in-app download, README and submission link.
+- Why: Make the project story easier to follow with consistent visuals, concise copy and more whitespace.
+- Validation: Rendered and inspected all seven slides; package integrity and slide geometry checks passed with zero findings. TypeScript compilation passed; Vite bundling stopped because sandboxed `fs.realpath` returned `EPERM` for `index.html`.
+- Limitations: The bundled presentation finalizer could not resolve the workspace directory in this Windows sandbox (`fs.realpath` returned `EPERM`); direct package and layout validators passed.
+
+
 ## 2026-10-11T08:00:00+05:30 — Final Polish & Documentation for Submission
 
 - Changed: Completed `README.md`, `SUBMISSION.md`, `AI_USAGE.md`, and added `.env.example`. Aligned 16:9 widescreen presentation deck (`Trishna 3D ppt.pptx`) with balanced margins and UI download button.

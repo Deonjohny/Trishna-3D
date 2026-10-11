@@ -96,8 +96,8 @@ export default function Dashboard({
             </button>
           )}
           <a
-            href="/Trishna%203D%20ppt.pptx"
-            download="Trishna 3D ppt.pptx"
+            href="/Trishna%203D%20Pitch%20Deck.pptx"
+            download="Trishna 3D Pitch Deck.pptx"
             className="home-explore"
             style={{
               fontSize: '13px',
@@ -109,7 +109,7 @@ export default function Dashboard({
               alignItems: 'center',
               gap: '6px'
             }}
-            title="Download full 7-slide PowerPoint presentation (Trishna 3D ppt.pptx)"
+            title="Download full 7-slide PowerPoint presentation (Trishna 3D Pitch Deck.pptx)"
           >
             <span>📊</span> Download Trishna 3D PPT <span>↓</span>
           </a>

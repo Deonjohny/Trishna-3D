@@ -15,7 +15,7 @@ Complete this file during the hackathon and use it to prepare your submission th
   4. Open: `http://localhost:5173`
   5. Click **"Load 3-Floor Residence Model (10m × 14m)"** to experience the 7-second progressive build animation and switch to **Person Walk View** to freely climb stairs and explore all three floors.
   6. Demo video available in repository: [`demo vedio.mp4`](demo%20vedio.mp4)
-  7. Pitch presentation: [`Trishna 3D ppt.pptx`](Trishna%203D%20ppt.pptx) (also downloadable directly inside the web UI)
+  7. Pitch presentation: [`Trishna 3D - Pitch Deck.pptx`](presentation-output/Trishna%203D%20-%20Pitch%20Deck.pptx) (also downloadable inside the web UI)
 - **Demo access requirements:** Modern web browser with WebGL 2.0 enabled. No mandatory paid API keys or cloud account required to run the local demo (offline architectural sample models and vector parsing are bundled).
 
 ## Participants
@@ -37,9 +37,9 @@ Participate solo or in a team of up to 4. Remove unused rows.
   2. **Model Selection:** Click **"Load 3-Floor Residence Model (10m × 14m)"** to load the multi-storey residential plan from the architectural drawing sheet.
   3. **Progressive Construction:** Observe the 7-second bottom-to-top animation as the ground foundation, living hall, continuous stair core, upper villa, and terrace emerge chronologically with a live progress HUD.
   4. **First-Person Walkthrough:** Click **"Walk View"** (or press W/A/S/D). Walk through the main front entrance, note that every room's door opens inward upon approach, and freely climb the stair flights to the 1st floor and terrace without collision blocks.
-  5. **Presentation Export:** Click **"📊 Download Trishna 3D PPT ↓"** to view the comprehensive 7-slide pitch presentation.
+  5. **Presentation Export:** Click **"📊 Download Trishna 3D PPT ↓"** to download the refined 7-slide pitch presentation.
 - **Checks performed and results:**
-  - `npm run build` executed cleanly (`tsc -b && vite build`) with zero TypeScript errors.
+  - Previous demo build completed successfully. During the latest presentation update, TypeScript compilation passed but Vite bundling stopped because sandboxed path resolution returned `EPERM` for `index.html`.
   - Server responsiveness verified at `http://localhost:5173` (HTTP 200 OK).
   - Continuous collision and vertical stair step elevation verified across Ground, 1st, and 2nd floor levels.
 - **Known limitations or incomplete features:**
