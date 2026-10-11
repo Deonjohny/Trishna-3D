@@ -4,6 +4,12 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-11T09:06:40+05:30 — Consistent presentation color theme
+
+- Changed: Applied the deck's sage background, pine-green typography, pale-green content panel, coral highlights, and page numbering to the sustainability slide. Saved the six-slide presentation as `presentation-output/Trishna 3D - Pitch Deck v4.pptx` and updated the app-served deck plus README and submission links.
+- Why: Make the sustainability close visually consistent with the rest of the requested, uncluttered pitch deck.
+- Validation: Rendered and visually inspected all six slides. Package integrity and slide geometry validators passed with zero findings. Finalizer could not resolve the workspace path due to sandbox `fs.realpath` EPERM.
+- Limitations: Finalizer-specific checks could not run in this Windows sandbox; direct package and geometry validators were used instead.
 ## 2026-10-11T09:02:33+05:30 — Expanded Pitch Deck Content
 
 - Changed: Added a dedicated working-prototype slide with concrete input, build and walkthrough details; expanded scalability constraints and the sustainability pathway. Updated the deck link and app-served deck.
