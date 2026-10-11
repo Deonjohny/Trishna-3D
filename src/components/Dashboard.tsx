@@ -113,6 +113,24 @@ export default function Dashboard({
           >
             <span>📊</span> Download Trishna 3D PPT <span>↓</span>
           </a>
+          <a
+            href="/3dpdf.pdf"
+            download="3dpdf.pdf"
+            className="home-explore"
+            style={{
+              fontSize: '13px',
+              padding: '10px 18px',
+              background: '#204637',
+              color: '#ffffff',
+              textDecoration: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px'
+            }}
+            title="Download complete project dossier & hackathon winning pitch (3dpdf.pdf)"
+          >
+            <span>📄</span> Download 3D PDF Dossier <span>↓</span>
+          </a>
         </div>
       </div>
 
