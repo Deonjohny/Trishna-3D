@@ -15,7 +15,7 @@ Complete this file during the hackathon and use it to prepare your submission th
   4. Open: `http://localhost:5173`
   5. Click **"Load 3-Floor Residence Model (10m × 14m)"** to experience the 7-second progressive build animation and switch to **Person Walk View** to freely climb stairs and explore all three floors.
   6. Demo video available in repository: [`demo vedio.mp4`](demo%20vedio.mp4)
-  7. Pitch presentation: [`Trishna 3D - Pitch Deck.pptx`](presentation-output/Trishna%203D%20-%20Pitch%20Deck.pptx) (also downloadable inside the web UI)
+  7. Pitch presentation: [`Trishna 3D - Pitch Deck v2.pptx`](presentation-output/Trishna%203D%20-%20Pitch%20Deck%20v2.pptx) (also downloadable inside the web UI)
 - **Demo access requirements:** Modern web browser with WebGL 2.0 enabled. No mandatory paid API keys or cloud account required to run the local demo (offline architectural sample models and vector parsing are bundled).
 
 ## Participants

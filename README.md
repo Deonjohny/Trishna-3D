@@ -37,7 +37,7 @@ This template has no application code or required technology stack. The document
 - **Working demo:** 
   - **Live Local Web App:** `http://localhost:5173` (Vite dev server)
   - **Pre-recorded Walkthrough Video:** [`demo vedio.mp4`](demo%20vedio.mp4) (Included in repo via Git LFS)
-  - **Pitch presentation:** [`Trishna 3D - Pitch Deck.pptx`](presentation-output/Trishna%203D%20-%20Pitch%20Deck.pptx) (also available from the web app download button)
+  - **Pitch presentation:** [`Trishna 3D - Pitch Deck v2.pptx`](presentation-output/Trishna%203D%20-%20Pitch%20Deck%20v2.pptx) (also available from the web app download button)
   - **Official Hackathon Dossier PDF:** [`3dpdf.pdf`](3dpdf.pdf) (Complete architecture and competitive analysis)
 - **Technology stack:**
   - **3D Graphics & Kinematics:** Three.js (WebGL 2.0), PCFSoftShadowMap, Raycasting Interaction
@@ -90,7 +90,7 @@ Follow these verified steps to run Trishna 3D locally:
   - ✦ **Progressive Bottom-to-Top Build Animation:** Easing-driven construction timeline animating ground foundations, stair cores, first floor, second floor, and terrace over 7 seconds with interactive HUD controls.
   - ✦ **Collision-Aware First-Person Walkthrough:** Continuous multi-storey stair traversal, automatic proximity door opening, and obstruction-free outdoor garden pathways.
   - ✦ **Pastel Green UI & Brick Intro:** Calming mint/sage aesthetic (`#1E3D2F`, `#2D563F`, `#D5EBD9`) with branded 3D building introduction.
-  - ✦ **Presentation:** Refined 7-slide pitch deck in [`presentation-output/`](presentation-output/Trishna%203D%20-%20Pitch%20Deck.pptx), served by the app download button.
+  - ✦ **Presentation:** Refined 7-slide pitch deck in [`presentation-output/`](presentation-output/Trishna%203D%20-%20Pitch%20Deck%20v2.pptx), served by the app download button.
   - ✦ **Dossier PDF:** Standalone printable report [`3dpdf.pdf`](3dpdf.pdf) formatted for judges.
 
 - **Known limitations:**

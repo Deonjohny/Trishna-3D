@@ -4,6 +4,9 @@ Use Codex during the hackathon and briefly document its actual contribution here
 
 ## Event build log
 
+| 2026-10-11T08:54:20+05:30 | Codex | Rebuilt presentation to match requested sections | Restructured the deck into five slides: intro, problem statement, proposed solution, scalability, sustainability. Replaced the app's public deck and updated README, SUBMISSION and CHANGELOG links. | Pending participant review. Kept sustainability benefits as potential and disclosed that savings are not measured. | Rendered and visually inspected all five slides; package integrity and layout geometry checks passed with zero findings. Finalizer path resolution remains blocked by sandbox `fs.realpath` EPERM. |
+
+
 | 2026-10-11T08:46:59+05:30 | Codex | Refined presentation and demo download | Reworked the seven-slide pitch deck into a concise story with a consistent green/coral theme, a floor-plan example, a custom architectural illustration, and speaker notes. Updated `Dashboard.tsx`, `README.md`, `SUBMISSION.md` and `CHANGELOG.md`; added the deck under `presentation-output/` and `public/`. | Pending participant review; adjusted slide 5 caption contrast after visual inspection. | Rendered and inspected every slide; package integrity and geometry validators passed with zero findings. TypeScript compilation passed; Vite bundling and finalizer path resolution returned `EPERM` in the Windows sandbox. |
 
 | Date and time with timezone | Tool / model, if known | Task | Assistance and affected files | Human review / corrections | Validation and result |

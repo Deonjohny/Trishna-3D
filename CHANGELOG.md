@@ -4,6 +4,15 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-11T08:54:20+05:30 — Rebuild Pitch Deck Around Requested Story
+
+- Changed: Replaced the earlier pitch deck with a five-slide presentation: TRISHNA 3D introduction, problem statement, proposed solution, scalability, and sustainability. Updated the presentation link and refreshed the deck served by the app.
+- Why: Match the requested storyline and keep the presentation clear and low-clutter.
+- Validation: Rendered and inspected all five slides; package integrity and geometry validators passed with zero findings.
+- Limitations: Sustainability benefits are framed as potential; the prototype does not measure material, energy, or carbon savings. The bundled finalizer remains blocked by sandbox `fs.realpath` EPERM.
+
+
+
 ## 2026-10-11T08:46:59+05:30 — Refined Pitch Presentation
 
 - Changed: Created a spacious 7-slide deck at `presentation-output/Trishna 3D - Pitch Deck.pptx` and copied it to `public/Trishna 3D Pitch Deck.pptx`; updated the in-app download, README and submission link.
